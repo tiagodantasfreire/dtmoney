@@ -9,29 +9,6 @@ createServer({
     transaction: Model,
   },
 
-  seeds(server) {
-    server.db.loadData({
-      transactions: [
-        {
-          id: 1,
-          title: 'iFood',
-          type: 'withdraw',
-          category: 'Food',
-          amount: 20,
-          createdAt: new Date('2021-11-20 23:00:00'),
-        },
-        {
-          id: 2,
-          title: 'Salário',
-          type: 'deposit',
-          category: 'Work',
-          amount: 2500,
-          createdAt: new Date('2021-12-01 23:00:00'),
-        },
-      ],
-    })
-  },
-
   routes() {
     this.namespace = 'api'
 

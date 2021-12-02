@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.main`
+interface SummaryTotalProps {
+  total: number,
+};
+
+export const Container = styled.main<SummaryTotalProps>`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -27,7 +31,7 @@ export const Container = styled.main`
     }
 
     &.highlight-background {
-      background-color: var(--green);
+      background-color: ${({ total }) => total >= 0 ? 'var(--green)': 'var(--red)'};
       color: #fff;
     }
   }
